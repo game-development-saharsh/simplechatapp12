@@ -3,18 +3,16 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
-	<servlet>
+    
+    <servlet>
 		<description></description>
-		<display-name>Controller</display-name>
-		<servlet-name>Controller</servlet-name>
-		<servlet-class>com.javamaster.controller.HomeServlet</servlet-class>
+		<display-name>ActionServlet</display-name>
+		<servlet-name>ActionServlet</servlet-name>
+		<servlet-class>servlet.ActionServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Controller</servlet-name>
+		<servlet-name>ActionServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>default</servlet-name>
-		<url-pattern>/resources/*</url-pattern>
-	</servlet-mapping>
+    
 </web-app>
