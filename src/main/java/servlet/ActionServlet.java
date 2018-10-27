@@ -1,11 +1,15 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.InetAddress;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import server.Server;
 
 
 /**
@@ -17,9 +21,13 @@ public class ActionServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	Server server = null;
     public ActionServlet() {
         super();
         // TODO Auto-generated constructor stub
+
+		// create a server object and start it
+		
     }
 
 	/**
@@ -27,15 +35,23 @@ public class ActionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		String path = request.getServletPath();
-		if (path.equals("/")){
-			request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+		if(server == null) {
+			InetAddress inetAddress = InetAddress.getLocalHost();
+			PrintWriter out = response.getWriter().append("IP Address:- " + inetAddress.getHostAddress()+" & Host Name:- " + inetAddress.getHostName());
+			out.flush();
+	        int portNumber = 7090;
+	        System.out.println("server started");
+//			server = new Server(portNumber);
+//			server.start();
 		}
-		
-		else {
-			response.getWriter().append("Served at: ").append(path);
-		}
+//		String path = request.getServletPath();
+//		if (path.equals("/")){
+//			request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+//		}
+//		
+//		else {
+//			response.getWriter().append("Served at: ").append(path);
+//		}
 	}
 
 	/**
