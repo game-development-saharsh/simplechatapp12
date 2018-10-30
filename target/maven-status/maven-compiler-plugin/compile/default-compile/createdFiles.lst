@@ -1,6 +1,9 @@
 servlet\ActionServlet.class
-server\Server$ClientThread.class
+game\bean\Game.class
 server\ServerGUI.class
+game\bean\Player.class
+demo\DataFetch.class
+server\Server$ClientThread.class
+constants\AppConstants.class
 server\ChatMessage.class
 server\Server.class
-demo\DataFetch.class
